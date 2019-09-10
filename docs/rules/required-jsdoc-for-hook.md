@@ -36,5 +36,3 @@ const [sectionsIsExpanded, setCollapsedSections] = useState(sections.map(() => f
 */
 const [sectionsIsExpanded, setCollapsedSections] = useState(sections.map(() => false));
 ```
-
-[*Остальные примеры смотрите в тестах.*](../../../tests/lib/rules/ginny/no-compound-selector.js)
