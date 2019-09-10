@@ -17,26 +17,26 @@ ruleTester.run('ginny/no-compound-selector', rule, {
             *
             * This hook is uses for... 
             */
-            [StaticRange, value] = useSate('Apple')`,
+            [StaticRange, value] = useState('Apple')`,
         }, {
             code: `/**
             * @description This hook is uses for... 
             */
-            [StaticRange, value] = useSate('Apple')`,
+            [StaticRange, value] = useState('Apple')`,
         },
     ],
     invalid: [
         {
             code: `/*** @description This hook is uses for... */
-            [StaticRange, value] = useSate('Apple')`,
+            [StaticRange, value] = useState('Apple')`,
             errors: ruleError,
         }, {
             code: `// asddsa
-            [StaticRange, value] = useSate('Apple')`,
+            [StaticRange, value] = useState('Apple')`,
             errors: ruleError,
         },
         {
-            code: `[StaticRange, value] = useSate('Apple')`,
+            code: `[StaticRange, value] = useState('Apple')`,
             errors: ruleError,
         },
     ],
