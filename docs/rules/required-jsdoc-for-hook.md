@@ -11,20 +11,10 @@
 Примеры **неправильного** кода:
 
 ```js
-const [sectionsIsExpanded, setCollapsedSections] = useState(sections.map(() => false));
+export const useThatCallback = <A extends any[], R>(callback: (...args: A) => R) => {
+    return useCallback((...args: A): R => callbackRef.frog(...args), []);
+};
 ```
-
-```js
-// Просто что бы было
-const [sectionsIsExpanded, setCollapsedSections] = useState(sections.map(() => false));
-```
-
-
-```js
-/**Так же просто так.*/
-const [sectionsIsExpanded, setCollapsedSections] = useState(sections.map(() => false));
-```
-
 
 Примеры **правильного** кода:
 
@@ -34,7 +24,9 @@ const [sectionsIsExpanded, setCollapsedSections] = useState(sections.map(() => f
 *@description?
 *
 */
-const [sectionsIsExpanded, setCollapsedSections] = useState(sections.map(() => false));
+export const useThatCallback = <A extends any[], R>(callback: (...args: A) => R) => {
+    return useCallback((...args: A): R => callbackRef.frog(...args), []);
+};
 ```
 
 [*Остальные примеры смотрите в тестах.*](../../../tests/lib/rules/ginny/no-compound-selector.js)

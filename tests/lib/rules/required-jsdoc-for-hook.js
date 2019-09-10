@@ -22,21 +22,21 @@ ruleTester.run('ginny/no-compound-selector', rule, {
             code: `/**
             * @description This hook is uses for... 
             */
-            [StaticRange, value] = useState('Apple')`,
+            useDef = () => useState('Apple')`,
         },
     ],
     invalid: [
         {
             code: `/*** @description This hook is uses for... */
-            [StaticRange, value] = useState('Apple')`,
+            useDef = () => useState('Apple')`,
             errors: ruleError,
         }, {
             code: `// asddsa
-            [StaticRange, value] = useState('Apple')`,
+            useDef = () => useState('Apple')`,
             errors: ruleError,
         },
         {
-            code: `[StaticRange, value] = useState('Apple')`,
+            code: `useDef = () => useState('Apple')`,
             errors: ruleError,
         },
     ],
