@@ -2,6 +2,7 @@
   "name": "eslint-plugin-require-hooks-jsdoc",
   "version": "1.0.0",
   "description": "hooks jsdoc rule",
+  "main": "lib/index.js",
   "keywords": [
     "eslint",
     "eslintplugin"
