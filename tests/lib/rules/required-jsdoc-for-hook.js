@@ -10,7 +10,7 @@ const ruleError = [
     },
 ];
 
-ruleTester.run('ginny/no-compound-selector', rule, {
+ruleTester.run('required-hooks-jsdoc', rule, {
     valid: [
         {
             code: `/**
