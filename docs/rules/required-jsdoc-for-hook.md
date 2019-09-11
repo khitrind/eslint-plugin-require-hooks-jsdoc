@@ -1,4 +1,4 @@
-# rulex/require-hooks-jsdoc
+# lib/rules/require-hooks-jsdoc
 
 Каждый реакт-хук обязан иметь JSDoc.
 
@@ -28,5 +28,3 @@ export const useThatCallback = <A extends any[], R>(callback: (...args: A) => R)
     return useCallback((...args: A): R => callbackRef.frog(...args), []);
 };
 ```
-
-[*Остальные примеры смотрите в тестах.*](../../../tests/lib/rules/ginny/no-compound-selector.js)
