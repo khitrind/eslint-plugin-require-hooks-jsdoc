@@ -1,6 +1,6 @@
 'use strict';
 
-const rule = require('../../../../lib/rules/require-hooks-jsdoc');
+const rule = require('../../../lib/rules/require-hooks-jsdoc');
 const RuleTester = require('eslint').RuleTester;
 
 const ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2016}});
@@ -17,7 +17,7 @@ ruleTester.run('required-hooks-jsdoc', rule, {
             *
             * This hook is uses for... 
             */
-            [StaticRange, value] = useState('Apple')`,
+           useDef = () => useState('Apple')`,
         }, {
             code: `/**
             * @description This hook is uses for... 
@@ -27,16 +27,16 @@ ruleTester.run('required-hooks-jsdoc', rule, {
     ],
     invalid: [
         {
-            code: `/*** @description This hook is uses for... */
-            useDef = () => useState('Apple')`,
+            code: 
+            `/*** @description This hook is uses for... */
+
+
+
+            const useDef = () => useState('Apple')`,
             errors: ruleError,
         }, {
-            code: `// asddsa
-            useDef = () => useState('Apple')`,
-            errors: ruleError,
-        },
-        {
-            code: `useDef = () => useState('Apple')`,
+            code: 
+            `const useDef = () => useState('Apple')`,
             errors: ruleError,
         },
     ],
