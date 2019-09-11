@@ -1,6 +1,6 @@
 {
-  "name": "eslint-plugin-require-hooks-jsdoc",
-  "version": "1.0.0",
+  "name": "@yandex-int/eslint-plugin-require-hooks-jsdoc",
+  "version": "1.0.5",
   "description": "hooks jsdoc rule",
   "main": "lib/index.js",
   "keywords": [
