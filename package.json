@@ -1,5 +1,5 @@
 {
-  "name": "@yandex-int/eslint-plugin-require-hooks-jsdoc",
+  "name": "eslint-plugin-require-hooks-jsdoc",
   "version": "1.0.5",
   "description": "hooks jsdoc rule",
   "main": "lib/index.js",
@@ -22,6 +22,7 @@
   "author": "Dmitry Khitrin",
   "license": "ISC",
   "dependencies": {
-    "mocha": "^6.2.0"
+    "mocha": "^6.2.0",
+    "path": "0.12.7"
   }
 }
