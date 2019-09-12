@@ -1,7 +1,7 @@
 {
-  "name": "eslint-plugin-super-hooks-jsdoc",
+  "name": "@yandex-int/eslint-plugin-require-hooks-jsdoc",
   "version": "1.0.5",
-  "description": "hooks jsdoc rule",
+  "description": "Zen rules",
   "main": "lib/index.js",
   "keywords": [
     "eslint",
@@ -22,7 +22,6 @@
   "author": "Dmitry Khitrin",
   "license": "ISC",
   "dependencies": {
-    "mocha": "^6.2.0",
-    "path": "0.12.7"
+    "mocha": "^6.2.0"
   }
 }
