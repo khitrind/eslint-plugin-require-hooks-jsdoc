@@ -26,7 +26,7 @@ const hooksRule = {
       ['VariableDeclarator>Identifier']: function VariableDeclaratorIdentifier(node) {
         if (isHookName(node.name)) {
           if (!(0, _utils.ifCommentExist)(node, commentsList)) {
-            const messageText = (0, _utils.getWarnMessageText)(meta.docs.description, node);
+            const messageText = (0, _utils.getWarnMessageText)('Hook must have JSDoc.', node);
             context.report(messageText);
           }
         }
