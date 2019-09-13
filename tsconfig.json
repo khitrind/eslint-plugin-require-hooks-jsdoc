@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "noEmit": true,
+    "noEmit": false,
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
@@ -9,10 +9,14 @@
     "target": "esnext",
     "module": "commonjs",
     "moduleResolution": "node",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "lib": ["es2015"],
+    "outDir": "./hui"
   },
+  "include": ["src/**/*"],
   "exclude": [
-    "node_modules",
+    "./node_modules",
     "./build",
     "./dist"
   ]

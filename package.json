@@ -10,6 +10,8 @@
   "devDependencies": {
     "@babel/cli": "7.0.0",
     "@babel/core": "7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/plugin-transform-flow-strip-types": "7.4.4",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-typescript": "^7.6.0",
@@ -27,7 +29,8 @@
   ],
   "scripts": {
     "build": "rm -fr ./dist && NODE_ENV=production babel ./src --out-dir ./dist --copy-files",
-    "tsc": "tsc"
+    "tsc": "tsc --p ./tsconfig.json",
+    "check-types": "tsc"
   },
   "author": "Dmitry Khitrin",
   "license": "ISC",
