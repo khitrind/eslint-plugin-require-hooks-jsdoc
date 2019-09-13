@@ -1,6 +1,7 @@
 import {checkComments, getWarnMessageText, ifCommentExist} from '../utils';
+import {TSESTree} from '@typescript-eslint/experimental-utils';
 
-function isHookName(s) {
+function isHookName(s: string) {
     return /^use[A-Z0-9].*$/.test(s);
 }
 
@@ -14,10 +15,10 @@ export const hooksRule = {
         schema: []
     },
 
-    create(context) {
-        let commentsList;
+    create(context: any) {
+        let commentsList: number[];
         return {
-            ['VariableDeclarator>Identifier']: function (node) {
+            ['VariableDeclarator>Identifier']: function (node: TSESTree.Identifier) {
 
                 if (isHookName(node.name)) {
                   if (!ifCommentExist(node, commentsList)) {
@@ -26,7 +27,7 @@ export const hooksRule = {
                   }
                 }
             },
-            Program: function (node) {
+            Program: function (node: TSESTree.Program) {
                 commentsList = checkComments(node);
             }
         };
