@@ -1,6 +1,6 @@
 'use strict';
 
-const rule = require('../../../lib/rules/require-hooks-jsdoc');
+const rule = require('../../../src/lib/rules/require-hooks-jsdoc');
 const RuleTester = require('eslint').RuleTester;
 
 const ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2016}});

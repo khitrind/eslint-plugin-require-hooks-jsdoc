@@ -1,17 +1,23 @@
 {
   "name": "@yandex-int/eslint-plugin-require-hooks-jsdoc",
-  "version": "1.0.5",
+  "version": "1.0.1",
   "description": "Zen rules",
-  "main": "lib/index.js",
+  "main": "./dist/index.js",
   "keywords": [
     "eslint",
     "eslintplugin"
   ],
   "devDependencies": {
+    "@babel/cli": "7.0.0",
+    "@babel/core": "7.0.0",
+    "@babel/plugin-transform-flow-strip-types": "7.4.4",
+    "babel-cli": "6.26.0",
     "babel-eslint": "^8.0.1",
+    "babel-plugin-istanbul": "5.2.0",
     "eslint": "^4.19.1"
   },
   "scripts": {
+    "build": "rm -fr ./dist && NODE_ENV=production babel ./src --out-dir ./dist --copy-files",
     "test": "npx mocha tests --recursive"
   },
   "files": [
@@ -22,6 +28,10 @@
   "author": "Dmitry Khitrin",
   "license": "ISC",
   "dependencies": {
-    "mocha": "^6.2.0"
+    "@babel/preset-env": "7.6.0",
+    "babel-plugin-add-module-exports": "1.0.2",
+    "eslint-plugin-jsdoc": "15.9.1",
+    "mocha": "^6.2.0",
+    "user": "0.0.0"
   }
 }
