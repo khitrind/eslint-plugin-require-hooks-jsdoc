@@ -16,7 +16,7 @@ export const requirJSDocForExport = {
         return {
             ExportNamedDeclaration: function (node) {
                 if (!ifCommentExist(node, commentsList)) {
-                    const messageText = getWarnMessageText(meta.docs.description, node);
+                    const messageText = getWarnMessageText('Need JSDoc for utils export.', node);
                     context.report(messageText);
                 }
             },

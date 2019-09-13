@@ -21,7 +21,7 @@ export const hooksRule = {
 
                 if (isHookName(node.name)) {
                   if (!ifCommentExist(node, commentsList)) {
-                      const messageText = getWarnMessageText(meta.docs.description, node);
+                      const messageText = getWarnMessageText('Hook must have JSDoc.', node);
                     context.report(messageText);
                   }
                 }
