@@ -18,22 +18,15 @@ const requirJSDocForExport = {
 
   create(context) {
     let commentsList;
-    let isUtils = false;
     return {
       ExportNamedDeclaration: function ExportNamedDeclaration(node) {
-        if (isUtils) {
-          if (!(0, _utils.ifCommentExist)(node, commentsList)) {
-            const messageText = (0, _utils.getWarnMessageText)(meta.docs.description, node);
-            context.report(messageText);
-          }
+        if (!(0, _utils.ifCommentExist)(node, commentsList)) {
+          const messageText = (0, _utils.getWarnMessageText)(meta.docs.description, node);
+          context.report(messageText);
         }
       },
       Program: function Program(node) {
         commentsList = (0, _utils.checkComments)(node);
-
-        if (context.getFilename().match('utils')) {
-          isUtils = true;
-        }
       }
     };
   }

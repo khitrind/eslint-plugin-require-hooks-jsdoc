@@ -11,10 +11,13 @@
     "@babel/cli": "7.0.0",
     "@babel/core": "7.0.0",
     "@babel/plugin-transform-flow-strip-types": "7.4.4",
+    "@babel/preset-env": "^7.6.0",
     "babel-cli": "6.26.0",
     "babel-eslint": "^8.0.1",
+    "babel-plugin-add-module-exports": "^1.0.2",
     "babel-plugin-istanbul": "5.2.0",
-    "eslint": "^4.19.1"
+    "eslint": "^4.19.1",
+    "mocha": "^6.2.0"
   },
   "scripts": {
     "build": "rm -fr ./dist && NODE_ENV=production babel ./src --out-dir ./dist --copy-files",
@@ -27,11 +30,5 @@
   ],
   "author": "Dmitry Khitrin",
   "license": "ISC",
-  "dependencies": {
-    "@babel/preset-env": "7.6.0",
-    "babel-plugin-add-module-exports": "1.0.2",
-    "eslint-plugin-jsdoc": "15.9.1",
-    "mocha": "^6.2.0",
-    "user": "0.0.0"
-  }
+  "dependencies": {}
 }
