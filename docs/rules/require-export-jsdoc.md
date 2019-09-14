@@ -1,6 +1,6 @@
-# src/lib/rules/require-hooks-jsdoc
+# src/lib/rules/require-export-jsdoc
 
-Каждый реакт-хук обязан иметь JSDoc.
+Все экспортируемые переменные обязаные иметь комментарии или jsdoc.
 
 > Почему?
 
@@ -11,16 +11,14 @@
 Примеры **неправильного** кода:
 
 ```js
-export const useThatCallback = <A extends any[], R>(callback: (...args: A) => R) => {
-    return useCallback((...args: A): R => callbackRef.frog(...args), []);
-};
+export const useThatCallback = getSomeParams();
 ```
 
 Примеры **правильного** кода:
 
 ```js
 /**
-* Этот хук существует для...
+* В этой переменной хранится...
 *@description?
 *
 */
