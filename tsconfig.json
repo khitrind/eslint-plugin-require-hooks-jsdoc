@@ -11,8 +11,9 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "lib": ["es2015"],
-    "outDir": "./hui"
+    "lib": ["es2015","es2016"],
+    "outDir": "./lib",
+    "jsx": "react"
   },
   "include": ["src/**/*"],
   "exclude": [
