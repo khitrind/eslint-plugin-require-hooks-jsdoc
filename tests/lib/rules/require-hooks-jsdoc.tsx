@@ -1,16 +1,15 @@
-'use strict';
+import {hooksRule} from "../../../src/lib/rules/require-hooks-jsdoc"
+import {RuleTester} from 'eslint';
 
-const rule = require('../../../src/lib/rules/require-hooks-jsdoc');
-const RuleTester = require('eslint').RuleTester;
 
 const ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2016}});
 const ruleError = [
     {
-        message: rule.meta.docs.description,
+        message: hooksRule.meta.docs.description,
     },
 ];
 
-ruleTester.run('required-hooks-jsdoc', rule, {
+ruleTester.run('required-hooks-jsdoc', hooksRule, {
     valid: [
         {
             code: `/**
