@@ -18,7 +18,7 @@ export const hooksRule = {
     create(context: any) {
         let commentsList: number[];
         return {
-            ['VariableDeclarator>Identifier']: function (node: TSESTree.Identifier) {
+            ['VariableDeclarator>Identifier']: (node: TSESTree.Identifier): void => {
 
                 if (isHookName(node.name)) {
                   if (!ifCommentExist(node, commentsList)) {
@@ -27,7 +27,7 @@ export const hooksRule = {
                   }
                 }
             },
-            Program: function (node: TSESTree.Program) {
+            Program: (node: TSESTree.Program): void => {
                 commentsList = checkComments(node);
             }
         };

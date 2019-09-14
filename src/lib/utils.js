@@ -22,7 +22,7 @@ export function checkComments (node) {
 export function getWarnMessageText (message, node) {
     const warnMessageText = {
         node,
-        message: message,
+        message,
         data: {
             identifier: node.name
         },
