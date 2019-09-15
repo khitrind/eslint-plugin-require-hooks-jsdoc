@@ -1,5 +1,5 @@
 import {checkComments, getWarnMessageText, ifCommentExist} from '../utils';
-import {ExportNamedDeclaration, Comment, Program} from '@typescript-eslint/typescript-estree/dist/ts-estree/ts-estree';
+import {TSESTree} from '@typescript-eslint/experimental-utils';
 
 
 export const requirJSDocForExport = {
@@ -15,14 +15,14 @@ export const requirJSDocForExport = {
         let commentsList: number[];
 
         return {
-            ExportNamedDeclaration: (node: ExportNamedDeclaration): void => {
+            ExportNamedDeclaration: (node: TSESTree.ExportNamedDeclaration): void => {
                 if (!ifCommentExist(node, commentsList)) {
                     const messageText = getWarnMessageText('Need JSDoc for utils export.', node);
                     context.report(messageText);
                 }
             },
 
-            Program: (node: Program): void => {
+            Program: (node: TSESTree.Program): void => {
                 commentsList = checkComments(node);
             }
         };
