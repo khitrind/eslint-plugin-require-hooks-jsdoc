@@ -1,4 +1,4 @@
-import {checkComments, getWarnMessageText, ifCommentExist} from '../utils';
+import {checkComments, ifCommentExist, createRule} from '../utils';
 import {TSESTree} from '@typescript-eslint/experimental-utils';
 
 function isHookName(s: string) {
@@ -6,24 +6,34 @@ function isHookName(s: string) {
 }
 
 
-export const hooksRule = {
+export const hooksRule = createRule({
+    name: 'require-hooks-jsdoc',
+    defaultOptions: [],
     meta: {
+        type: 'suggestion',
         docs: {
-            description: "Hook must have JSDoc."
+            category: 'Stylistic Issues',
+            description: 'Hook must have JSDoc.',
+            recommended: 'error',
         },
-        fixable: null,
+        messages: {
+            requireHookJSDoc: 'Hook must have JSDoc.',
+        },
         schema: []
     },
 
-    create(context: any) {
+    create(context) {
         let commentsList: number[];
         return {
             ['VariableDeclarator>Identifier']: (node: TSESTree.Identifier): void => {
 
                 if (isHookName(node.name)) {
                   if (!ifCommentExist(node, commentsList)) {
-                      const messageText = getWarnMessageText('Hook must have JSDoc.', node);
-                    context.report(messageText);
+                    context.report({
+                        node,
+                        loc: node.loc,
+                        messageId: 'requireHookJSDoc'
+                    });
                   }
                 }
             },
@@ -32,4 +42,4 @@ export const hooksRule = {
             }
         };
     }
-};
+});
