@@ -1,19 +1,22 @@
-import {hooksRule} from "../../../src/lib/rules/require-hooks-jsdoc"
+import {requirJSDocForExport} from '../../../src/lib/rules/require-export-jsdoc';
 import {ruleTester} from '../utils';
 
-ruleTester.run('required-hooks-jsdoc', hooksRule, {
+
+
+
+ruleTester.run('required-export-jsdoc', requirJSDocForExport, {
     valid: [
         {
             code: `/**
             *
             * This hook is uses for...
             */
-           useDef = () => useState('Apple')`,
+           export const useDef = () => useState('Apple')`,
         }, {
             code: `/**
             * @description This hook is uses for...
             */
-            useDef = () => useState('Apple')`,
+            export const useDef = () => useState('Apple')`,
         },
     ],
     invalid: [],
