@@ -1,6 +1,6 @@
 {
   "name": "@yandex-int/eslint-plugin-require-hooks-jsdoc",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Zen rules",
   "main": "./dist/lib/index.js",
   "keywords": [
