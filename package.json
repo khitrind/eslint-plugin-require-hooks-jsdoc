@@ -11,8 +11,8 @@
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/experimental-utils": "^2.2.0",
     "@typescript-eslint/typescript-estree": "^2.2.0",
-    "eslint": "^6.4.0",
-    "mocha": "^6.2.3",
+    "eslint": "^9.39.1",
+    "mocha": "^11.7.5",
     "typescript-estree": "^18.1.0"
   },
   "files": [
